@@ -1,0 +1,230 @@
+#worry {
+    /* background-color: #f9ce7e; */
+    background-size: 250px auto;
+    margin: 0 auto;
+    margin-bottom: 120px;
+    background-color: var(--background-color);
+
+}
+
+
+#worry .title {
+    text-align: center;
+    margin: 0 0 50px 0;
+    font-size: 2rem;
+    line-height: 1.5;
+
+}
+
+#worry .title span {
+    font-size: 2.5rem;
+    color: var(--blue-color)
+}
+
+#worry .worry-area {
+    position: relative;
+    padding: 120px 0;
+    margin-bottom: 50px;
+}
+
+#worry .worry-img {
+    width: 50%;
+    margin: 0 auto;
+    animation-delay: .4s;
+}
+
+#worry .worry-area img {
+    border-radius: 50%;
+}
+
+#worry .worry-area ul {
+    animation-delay: .3s;
+}
+
+#worry .worry-area ul li {
+    position: absolute;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    height: 60px;
+    line-height: 1;
+    background-color: var(--yellow-color);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+// #worry .worry-area ul li::after {
+//     content: '';
+//     position: absolute;
+//     width: 40px;
+//     height: 2px;
+//     bottom: -10px;
+//     right: 10px;
+//     background: #2e98e5;
+// }
+
+// #worry .worry-area ul li:nth-child(n+4)::after {
+//     left: 10px;
+// }
+
+#worry .worry-area ul li:nth-child(1) {
+    top: 15%;
+    left: 5%;
+    animation-delay: .6s;
+}
+
+#worry .worry-area ul li:nth-child(2) {
+    top: 45%;
+    left: 0%;
+    animation-delay: .9s;
+}
+
+#worry .worry-area ul li:nth-child(3) {
+    top: 80%;
+    left: 5%;
+    animation-delay: 1.2s;
+}
+
+#worry .worry-area ul li:nth-child(4) {
+    top: 12%;
+    right: 12%;
+    animation-delay: 1.5s;
+}
+
+#worry .worry-area ul li:nth-child(5) {
+    top: 42%;
+    right: 8%;
+    animation-delay: 1.8s;
+}
+
+#worry .worry-area ul li:nth-child(6) {
+    top: 75%;
+    right: 10%;
+    animation-delay: 2.1s;
+}
+
+#worry .worry-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    margin-bottom: 40px;
+    background-color: #fff;
+
+}
+
+#worry .worry-text p {
+    text-align: left;
+    font-size: 1.25rem;
+}
+
+#worry .worry-text img {
+    width: auto;
+    height: 10vh;
+    object-fit: contain;
+}
+
+@media screen and (max-width:768px) {
+    #worry .worry-area {
+        padding: 0;
+    }
+
+    #worry .worry-img {
+        width: 50%;
+        margin: 0 auto 30px auto;
+    }
+
+    #worry .worry-area ul li {
+        position: relative;
+        font-size: 1.25rem;
+        top: inherit !important;
+        left: inherit !important;
+        right: inherit !important;
+        transform: none !important;
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+
+    #worry .worry-area ul li {
+        text-align: center;
+        width: 100%;
+        height: 40px;
+        // line-height: 1;
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+
+    // #worry .worry-area ul li:after {
+    //     display: none !important;
+    // }
+
+    #worry .worry-text {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+
+}
+
+.fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.zoomIn {
+    animation-name: zoomInAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoomInAnime {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.fadeDown {
+    animation-name: fadeDownAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeDownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInTrigger,
+.zoomInTrigger,
+.fadeDownTrigger,
+.flipLeftTopTrigger,
+.flipRightTopTrigger {
+    opacity: 0;
+}

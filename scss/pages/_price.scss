@@ -1,0 +1,104 @@
+#price {
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+#price .container {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 20px #ccc;
+    padding: 20px 50px;
+    margin: 0 auto;
+}
+
+#price h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 30px 0;
+}
+
+
+#price .price-area {
+    width: 100%;
+    background: lightgray;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#price ul {
+    text-align: left;
+    margin: 20px auto;
+}
+
+#price ul p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#price li {
+    list-style: inside;
+    font-size: 1rem;
+    padding-bottom: 5px;
+}
+
+#price li:last-child {
+    padding-bottom: none;
+}
+
+
+#price .container .yen span {
+    color: teal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+#price .container .yen {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#price .price-text {
+    margin-top: 50px;
+}
+
+#price .price-text p {
+    font-size: 1.25rem;
+    padding: 0 5%;
+    text-align: left;
+
+}
+
+#price .price-text img {
+    width: auto;
+    height: 10vh;
+    object-fit: contain;
+}
+
+#price .btn {
+    display: block;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width:768px) {
+    #price .price-area {
+        align-items: normal;
+        flex-direction: column;
+    }
+
+    #price ul {
+        padding-left: 30px;
+        margin: 20px 0;
+    }
+
+    #price .price-text p {
+        font-size: 1rem;
+        padding: 0 5%;
+        text-align: left;
+    }
+
+}

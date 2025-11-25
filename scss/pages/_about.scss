@@ -1,0 +1,64 @@
+#about {
+  margin-bottom: 120px;
+  /* text-align: center; */
+}
+
+#about .title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#about .catchphrase {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+}
+
+#about .image {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#about .about-img {
+  max-width: 400px;
+  flex-shrink: 0;
+  margin-right: 60px;
+}
+
+#about .btn {
+  background-color: yellow;
+  border-bottom: 6px solid yellow;
+  border-radius: 10px;
+  color: blue;
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  padding: 15px 35px;
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+}
+
+#about .btn::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-top: solid 3px blue;
+  border-right: solid 3px blue;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#about .btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+
+

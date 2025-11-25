@@ -1,0 +1,170 @@
+@use "../common/mixin" as m;
+
+#metaleaf {
+  margin-bottom: 200px;
+}
+
+.metaleaf-description {
+  text-align: center;
+
+  p {
+    font-size: 2rem;
+    line-height: 100px;
+    margin-bottom: 100px;
+    opacity: 0;
+    animation: glow_anime_on 5s ease-out forwards;
+
+    // @include mq("sp"){
+    //   font-size: 1.5rem;
+    //   line-height: 50px;
+    // }
+  }
+}
+  
+    @keyframes glow_anime_on {
+      0% {
+        opacity: 0;
+        text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+      }
+      50% {
+        opacity: 1;
+        text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+      }
+      100% {
+        opacity: 1;
+        text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+      }
+    }
+  
+  .color {
+    color: var(--blue-color);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0.1rem;
+      width: 0%;
+      height: 50%;
+      z-index: -1;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 0, 0) 60%,
+        #f7ff8c 60%
+      );
+      transition: width 0.6s ease;
+    }
+
+    &.active::before {
+      width: 100%;
+    }
+  }
+
+.meta-right,
+.meta-left {
+ 
+  justify-content: center;
+
+  gap: 20px;
+  margin-bottom: 100px;
+  border-radius: 40px;
+  border: 3px solid black;
+  box-shadow: 9px 10px 2px var(--yellow-color);
+  padding: 30px;
+
+  p {
+    display: flex;
+    font-size: 2rem;
+    position: relative;
+    align-items: center;
+    margin-bottom: 30px;
+    gap:20px;
+
+    img {
+      width: 48px;
+      height: 48px;
+
+    }
+  }
+}
+
+.meta-left {
+  box-shadow: 9px 10px 2px var(--blue-color);
+}
+
+.meta-box {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.text-box {
+
+  p {
+    font-size: 1.5rem;
+  
+  //  @include mq("sp"){
+  //   font-size: 1rem;
+  //  }
+  }
+}
+
+.fade{
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.5s;
+}
+
+.shine {
+  display: inline-block; // ← これで a / wrapper が潰れない
+
+  a {
+    display: inline-block; // ← a の高さ0防止
+  }
+
+  span.mask {
+    position: relative;
+    display: inline-block;
+    width: fit-content; // ← 画像の natural size にフィット
+    height: fit-content;
+    overflow: hidden; // 範囲外を隠すだけ（画像は縮まない）
+
+    img {
+      display: block; // ← これが命。比率維持 & 余白ゼロ
+      width: 35vw; // ← 元の画像サイズ100%維持
+      height: auto;
+      position: relative;
+      z-index: 1;
+      border-radius: 30px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%; // ← 画像の外からスタート
+      width: 80%; // ← shine の見える幅
+      height: 100%; // ← 画像の高さに100%フィット
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: skewX(-25deg);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &:hover::before {
+      animation: shine 0.7s ease-out;
+    }
+  }
+}
+
+@keyframes shine {
+  100% {
+    left: 140%;
+  }
+}

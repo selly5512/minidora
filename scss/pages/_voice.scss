@@ -1,0 +1,115 @@
+@use "../common/mixin" as m;
+.voice {
+  margin-bottom: 30px;
+  width: 700px;
+  height: 300px;
+  background-color: #f3e0a6;
+  border: 1px solid #f3e0a6;
+  border-radius: 30px;
+}
+
+/* voice */
+#voice {
+  margin-bottom: 120px;
+  position: relative;
+  z-index: 0;
+  .container {
+    z-index: 5;
+  }
+
+  .item-left,
+  .item-right {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 60px;
+
+    .balloon-text {
+      width: 60%;
+      height: auto;
+      max-width: 500px;
+      justify-content: center;
+      background-color: var(--yellow-color);
+      border-radius: 15px;
+      padding: 20px;
+      position: relative;
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .item-left {
+    justify-content: flex-start;
+
+    &last-of-type {
+      margin-bottom: 0;
+    }
+    .balloon-text {
+      margin-left: 25px;
+      box-shadow: 2px 2px 4px #656262;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        left: 0;
+        margin-left: -30px;
+        border: 15px solid transparent;
+        border-right: 15px solid var(--yellow-color);
+      }
+    }
+  }
+
+  .item-right {
+    justify-content: flex-end;
+
+    .balloon-text {
+      margin-right: 25px;
+      box-shadow: -2px 2px 4px #656262;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        right: 0;
+        margin-right: -30px;
+        border: 15px solid transparent;
+        border-left: 15px solid var(--yellow-color);
+      }
+    }
+  }
+}
+
+.student {
+  img {
+    width: 200px;
+    height: 200px;
+    // background-color: var(--yellow-color);
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-bottom: 10px;
+  }
+
+  .name {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}
+
+.inview-balloon {
+  opacity: 0;
+}
+
+.inview-balloon.balloon-in {
+  animation: move 2s ease forwards;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

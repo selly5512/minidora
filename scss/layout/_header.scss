@@ -1,0 +1,371 @@
+@use'../common/mixin' as m;
+
+#splash-logo p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    color: #333;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+/*========= ローディング画面のためのCSS ===============*/
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue-color);
+    z-index: 9999999;
+    text-align: center;
+    color: #fff;
+}
+
+#splash-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+
+.splashbg1,
+.splashbg2 {
+    display: none;
+}
+
+body.appear .splashbg1,
+body.appear .splashbg2 {
+    display: block;
+}
+
+/*右に消えるエリア*/
+body.appear .splashbg1 {
+    animation-name: PageAnime;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    content: "";
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 50%;
+    transform: scaleX(1);
+    background-color: var(--blue-color);
+    /*伸びる背景色の設定*/
+}
+
+@keyframes PageAnime {
+    0% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform-origin: right;
+    }
+
+    100% {
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+}
+
+/*左に消えるエリア*/
+body.appear .splashbg2 {
+    animation-name: PageAnime2;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    content: "";
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 50%;
+    transform: scaleX(1);
+    background-color: var(--blue-color);
+    /*伸びる背景色の設定*/
+}
+
+@keyframes PageAnime2 {
+    0% {
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform-origin: left;
+    }
+
+    100% {
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#wrapper {
+    opacity: 0;
+    /*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #wrapper {
+    animation-name: PageAnimeAppear;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes PageAnimeAppear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    overflow: hidden;
+    display: inline-block;
+    padding: 0 10px;
+    /*英語がはみ出るので見えるように余白追記*/
+}
+
+.slide-in_inner {
+    display: inline-block;
+
+}
+
+/*左右のアニメーション*/
+.leftAnime,
+.rightAnime {
+    opacity: 0;
+    /*事前に透過0にして消しておく*/
+}
+
+.slideAnimeLeftRight {
+    animation-name: slideText-100;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideText-100 {
+    from {
+        transform: translateX(-100%);
+        /*要素を左の枠外に移動*/
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        /*要素を元の位置に移動*/
+        opacity: 1;
+    }
+}
+
+.slideAnimeRightLeft {
+    animation-name: slideText100;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+
+@keyframes slideText100 {
+    from {
+        transform: translateX(100%);
+        /*要素を右の枠外に移動*/
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        /*要素を元の位置に移動*/
+        opacity: 1;
+    }
+}
+
+
+
+
+#header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #FBFAFA;
+    align-items: center;
+    padding-inline: 40px;
+    position: fixed;
+    z-index: 10;
+    font-family: var(--ff-main);
+
+    .inner {
+        display: flex;
+        align-items: center;
+
+        .btn {
+            margin-right: 30px;
+        }
+    }
+}
+
+h1 {
+    width: 240px;
+    line-height: 1;
+    margin-left: 5%;
+
+    img {
+        height: 80px;
+    }
+}
+
+#nav {
+    position: fixed;
+    width: 300px;
+    top: 2.5%;
+    right: -400px;
+    padding-inline: 20px;
+    opacity: 1;
+    background-color: #FBFAFA;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 20px;
+    z-index: 100;
+    padding-block: 20px;
+
+    .menu-header {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px;
+
+        .logo {
+            width: 125px;
+
+            img {
+                height: 40px;
+            }
+        }
+    }
+
+    li {
+        font-size: 1rem;
+        text-align: center;
+        font-size: clamp(12px, calc(100vw * 15 / 1920), 15px);
+        font-weight: 500;
+        padding-inline: 15px;
+        text-align: left;
+        margin-bottom: 10px;
+
+        &::marker {
+            color: var(--blue-color);
+        }
+
+        a {
+            color: black;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                background: var(--blue-color);
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+            }
+
+            &:hover {
+                color: var(--blue-color);
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.open #nav {
+    opacity: 1;
+    right: 30px;
+    z-index: 1;
+}
+
+/*  hamburger  */
+
+
+.toggle-btn {
+    width: 100px;
+    height: 100px;
+    background-color: #FBFAFA;
+    position: relative;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 10;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    span {
+        display: block;
+        width: 50%;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        border: 1px solid rgb(0, 0, 0);
+        position: absolute;
+        left: 20px;
+        transition: all 0.5s;
+
+        &:nth-child(1) {
+            top: 35%;
+        }
+
+        &:nth-child(2) {
+            top: 50%;
+        }
+
+        &:nth-child(3) {
+            top: 65%;
+        }
+    }
+}
+
+.open .toggle-btn {
+    display: none;
+}
+
+
+#mask {
+    display: none;
+    transition: all 1s;
+}
+
+.open #mask {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: whitesmoke;
+    cursor: pointer;
+    opacity: 0.5;
+}

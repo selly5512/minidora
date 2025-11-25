@@ -1,0 +1,169 @@
+#flow h2 {
+    text-align: center;
+    margin: 0 0 100px 0;
+}
+
+#flow h2 span.bgLRextend::before {
+    background: #333;
+}
+
+
+#flow .flow-area {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 0 300px 0;
+}
+
+// @media screen and (max-width:800px) {
+//     #flow .flow-area {
+//         margin: 0 0 200px 0;
+//     }
+// }
+
+// @media screen and (max-width:800px) {
+//     #flow .flow-area {
+//         margin: 0 0 50px 0;
+//     }
+
+// }
+
+#flow .flow-area::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 20em;
+    background: #f9ce7e;
+    right: 10%;
+    top: 20%;
+    z-index: -1;
+}
+
+
+#flow .flow-area:nth-of-type(2n+1) {
+    flex-direction: row-reverse;
+}
+
+
+#flow .flow-area .img {
+    width: 50%;
+    height: 40vh;
+}
+
+#flow .flow-area .content {
+    width: 45%;
+    background: #fff;
+    box-shadow: 0 0 20px #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 150px;
+}
+
+// @media screen and (max-width:800px) {
+//     #flow .flow-area .content {
+//         width: 47%;
+//         top: 100px;
+//     }
+// }
+
+// @media screen and (max-width:800px) {
+//     #flow .flow-area .img {
+//         width: 60%;
+//         margin: 0 auto;
+//         z-index: 1;
+//     }
+
+//     #flow .flow-area .content {
+//         width: 100%;
+//         top: -10px;
+//         animation: none;
+//         opacity: 1;
+//         z-index: 2;
+//     }
+// }
+
+#flow .flow-area .content-area {
+    padding: 20px;
+}
+
+#flow .flow-area .content-area h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 30px 0;
+}
+
+#flow .flow-area .content-area h3 span {
+    font-weight: bold;
+    color: var(--blue-color);
+    text-transform: uppercase;
+    display: block;
+    font-size: 2.25rem;
+}
+
+#flow .flow-area .content-area p {
+    font-size: 1.2rem;
+}
+
+
+.flipLeft {
+    animation-name: flipLeftAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    perspective-origin: left center;
+    opacity: 0;
+}
+
+@keyframes flipLeftAnime {
+    from {
+        transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.flow-area {
+    transform: translate3d(0, 0, 0);
+}
+
+.bgLRextendTrigger,
+.bgappearTrigger,
+.fadeUpTrigger,
+.flipLeftTrigger {
+    opacity: 0;
+}
+
+@media screen and (max-width:768px) {
+    #flow h2 {
+        margin: 0 0 50px 0;
+    }
+
+    #flow .flow-area {
+        margin: 0 0 50px 0;
+    }
+
+    #flow .flow-area .img {
+        width: 60%;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+    #flow .flow-area .content {
+        width: 100%;
+        top: -10px;
+        animation: none;
+        opacity: 1;
+        z-index: 2;
+    }
+
+    #flow .flow-area .content-area h3 span {
+        display: inline;
+        margin-right: 20px;
+    }
+}
