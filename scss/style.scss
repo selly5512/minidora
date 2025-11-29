@@ -2,27 +2,21 @@
 @use'common/mixin' as m;
 @use'common/common';
 
-//layout
-@use'layout/footer';
+// layout
 @use'layout/header';
+@use'layout/footer';
 
 //pages
-@use'pages/voice';
-
-//pages
-@use'pages/metaleaf';
-
-//pages
-@use'pages/result';
-
-
-//pages
+@use'pages/splash';
+@use'pages/line';
 @use'pages/mainvisual';
-@use'pages/video';
+@use'pages/pronavi';
 @use'pages/worry';
 @use'pages/reason';
 @use'pages/flow';
+@use'pages/our-support';
+@use'pages/metaleaf';
+@use'pages/voice';
+@use'pages/result';
 @use'pages/price';
 @use'pages/question';
-
-
