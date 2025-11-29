@@ -1,2 +1,62 @@
 @use'../common/mixin' as m;
 
+footer {
+    width: 100%;
+    padding-block: 10px;
+    background-color: var(--blue-color);
+    text-align: center;
+
+    .law {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 5px;
+        font-family: var(--ff-main);
+
+        p {
+            margin-right: 50px;
+            font-size: 0.8rem;
+            position: relative;
+
+            a {
+                color: white;
+            }
+
+            &::after {
+                position: absolute;
+                top: 6px;
+                right: -20px;
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-top: 1px solid white;
+                border-right: 1px solid white;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    small {
+        font-size: 0.65rem;
+        color: white;
+        font-family: var(--ff-main);
+    }
+}
+
+@media (max-width:768px) {
+    footer {
+        .law {
+            p {
+                font-size: 0.68rem;
+                
+                &::after {
+                width: 7px;
+                height: 7px;
+            }
+            }
+        }
+
+        small {
+            font-size: 0.55rem;
+        }
+    }
+}
