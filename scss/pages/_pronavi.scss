@@ -1,0 +1,114 @@
+@use'../common/mixin' as m;
+
+#pronavi {
+    .pronavi-title {
+        font-weight: bold;
+
+        .main {
+            font-size: 1.8rem;
+            font-family: var(--ff-main);
+
+            br {
+                display: none;
+            }
+
+            span {
+                color: var(--blue-color);
+                font-size: 2.3rem;
+            }
+        }
+    
+        .sub {
+            font-size: 1.8rem;
+            padding-left: 3%;
+            margin-block: 20px;
+            font-family: var(--ff-main);
+
+            br {
+                display: none;
+            }
+
+            span {
+                color: var(--blue-color);
+                font-size: 2.3rem;
+            }
+        }
+    }
+    
+    .texts {
+        margin-block: 80px;
+        font-size: 1.1rem;
+        font-family: var(--ff-main);
+        position: relative;
+
+        span {
+            color: var(--blue-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        &::before {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            content: "";
+            width: 100px;
+            height: 5px;
+            border-bottom: 20px solid var(--blue-color);
+            border-right: 30px solid transparent;
+        }
+    }
+
+    .under {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .img {
+            width: 25%;
+            margin-left: 5%;
+        }
+
+        .btn {
+            padding-inline: 7px;
+            margin-right: 10%;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    #pronavi {
+        text-align: left;
+        padding-bottom: 50px;
+
+        .pronavi-title {
+            .main {
+                font-size: 1.2rem;
+
+                br {
+                    display: block;
+                }
+            }
+
+            .sub {
+                margin-block: 30px;
+                font-size: 1.2rem;
+                padding-left: 0;
+
+                br {
+                    display: block;
+                }
+
+                span {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .texts {
+            br {
+                display: none;
+            }
+        }
+    }
+}

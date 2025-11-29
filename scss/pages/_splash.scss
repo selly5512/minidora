@@ -1,0 +1,177 @@
+#splash-logo p {
+    // font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.25rem, calc(100vw * 5 / 1920), 5rem);
+    ;
+    color: #333;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue-color);
+    z-index: 9999999;
+    text-align: center;
+    color: #fff;
+}
+
+#splash-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.splashbg1,
+.splashbg2 {
+    display: none;
+}
+
+body.appear .splashbg1,
+body.appear .splashbg2 {
+    display: block;
+}
+
+body.appear .splashbg1 {
+    animation-name: PageAnime;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    content: "";
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 50%;
+    transform: scaleX(1);
+    background-color: var(--blue-color);
+}
+
+@keyframes PageAnime {
+    0% {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform-origin: right;
+    }
+
+    100% {
+        transform-origin: right;
+        transform: scaleX(0);
+    }
+}
+
+body.appear .splashbg2 {
+    animation-name: PageAnime2;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    content: "";
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 50%;
+    transform: scaleX(1);
+    background-color: var(--blue-color);
+}
+
+@keyframes PageAnime2 {
+    0% {
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform-origin: left;
+    }
+
+    100% {
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+}
+
+#wrapper {
+    opacity: 0;
+}
+
+body.appear #wrapper {
+    animation-name: PageAnimeAppear;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes PageAnimeAppear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    overflow: hidden;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.slide-in_inner {
+    display: inline-block;
+
+}
+
+.leftAnime,
+.rightAnime {
+    opacity: 0;
+}
+
+.slideAnimeLeftRight {
+    animation-name: slideText-100;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes slideText-100 {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideAnimeRightLeft {
+    animation-name: slideText100;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+
+@keyframes slideText100 {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

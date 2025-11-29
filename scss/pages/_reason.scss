@@ -1,8 +1,11 @@
 #reason {
     margin-bottom: 120px;
     background-color: var(--background-color);
+}
 
-
+#reason .section-title span {
+    color: var(--blue-color);
+    font-size: 3.8rem;
 }
 
 #reason ul {
@@ -13,27 +16,42 @@
 }
 
 #reason ul li {
-    width: 30%;
+    width: 31%;
     background-color: #fff;
     transition: all 0.3s ease;
     box-shadow: 0 0 8px 4px #ccc;
     padding: 20px;
 }
 
+
 #reason ul .item-title {
-    font-size: 2rem;
+    font-size: clamp(14px, calc(100vw * 32 / 1920), 32px);
     font-weight: bold;
     margin-bottom: 20px;
+    color: rgb(43, 43, 43);
+}
+
+#reason ul .item-title span {
+    color: rgb(79, 113, 204);
+    font-weight: bold;
+    font-size: clamp(14px, calc(100vw * 32 / 1920), 32px);
+    margin-inline: 8px;
 }
 
 #reason ul li img {
-    vertical-align: top;
+    height: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    object-fit: contain;
 }
 
 #reason ul .item-text {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1.125rem;
     margin: 20px 0;
+    border-top: 1px solid var(--blue-color);
+    padding-top: 15px;
 }
 
 .fadeIn {
@@ -70,6 +88,14 @@
     #reason ul li {
         width: 100%;
         margin-bottom: 50px;
+    }
+
+    #reason ul .item-title {
+        font-size: 24px;
+    }
+
+    #reason ul .item-title span {
+        font-size: 24px;
     }
 
     #reason ul li img {

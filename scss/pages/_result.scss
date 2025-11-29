@@ -1,30 +1,22 @@
+@use'../common/mixin' as m;
+
 /* result */
 #result {
-  width: 100%;
-  padding: 100px 0 50px 0;
-  margin-bottom: 120px;
+    width: 100%;
+    padding: 100px 0 50px 0;
+    margin-bottom: 120px;
 
-  .section-deco{
-    width: 200px;
-    margin-bottom:30px;
-  }
-  .slick-area li {
-    // box-shadow: 1px 1px 4px red ;
-    padding: 0 30px;
-    vertical-align: baseline;
-  }
-}
+    .section-deco {
+        width: 200px;
+    }
 
-.logo-bg {
-  width: 100vw; /* 好きなサイズに調整してね */
-  height: 150vh;
-  margin: 0;
-  background-color: var(--background-color);
+    .slick-area li {
+        // box-shadow: 1px 1px 4px red ;
+        padding: 0 30px;
+        vertical-align: baseline;
+    }
 
-  clip-path: polygon(0% 0%, 50% 22%, 100% 0%, 100% 100%, 0% 100%);
-  position: absolute;
-  z-index: -2;
-  .section-deco{
-    margin-bottom:500px;
-  }
+    .section-title{
+        padding-top: 50px;
+    }
 }

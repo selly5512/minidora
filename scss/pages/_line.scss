@@ -1,0 +1,48 @@
+@use'../common/mixin' as m;
+
+#line-header {
+    height: 80px;
+    border-bottom: solid 3px #333;
+}
+
+#line-header .site-logo {
+    width: auto;
+    height: 25px;
+    line-height: 1;
+    margin-left: 5px;
+}
+
+.site-logo img {
+    width: auto;
+    height: 100%;
+}
+
+#invite {
+    padding-top: 150px;
+    text-align: center;
+}
+
+#invite img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    border: solid 1px #333;
+}
+
+#invite .text1 {
+    margin: 30px 0 16px 0;
+    font-size: 1.25rem;
+}
+
+#invite .text2 {
+    font-size: 0.875rem;
+    color: #999;
+}
+
+#invite a {
+    display: block;
+    margin-top: 24px;
+    text-decoration: underline;
+    color: blue;
+}

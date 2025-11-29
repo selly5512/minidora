@@ -1,0 +1,155 @@
+@use'../common/mixin' as m;
+
+#our-support {
+    background-color: var(--background-color);
+    padding: 0 10% 80px 10%;
+}
+
+#our-support .sub-title {
+    font-size: 1rem;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#our-support .sub-title span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--blue-color);
+}
+
+.support {
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px 4px #ccc;
+}
+
+.support-area {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding: 50px 10%;
+    margin-bottom: 50px;
+}
+
+.support-img {
+    height: 300px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    object-fit: contain;
+
+}
+
+.support-content {
+    width: 70%;
+    font-size: 1.25rem;
+}
+
+
+.support h3 {
+    font-size: clamp(24px, calc(100vw * 32 / 1920), 32px);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+
+}
+
+.support h3 span {
+    font-weight: bold;
+    color: var(--blue-color);
+    text-transform: uppercase;
+    display: block;
+    font-size: 2rem;
+}
+
+.support h3::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background-color: var(--blue-color);
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.support-content p {
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width:768px) {
+    #our-support {
+        margin-bottom: 80px;
+    }
+
+    .support-area {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 20px 10%;
+    }
+
+    .support-img {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .support-content {
+        width: 100%;
+        padding-top: 20px;
+        border-top: 1.25px solid var(--blue-color);
+    }
+
+    .support h3 {
+        font-size: clamp(1.25rem, calc(100vw * 1.5 / 1920), 1.5rem);
+    }
+}
+
+
+.fadeLeft {
+    animation-name: fadeLeftAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeLeftAnime {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeRight {
+    animation-name: fadeRightAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeRightAnime {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeLeftTrigger,
+.fadeRightTrigger {
+    opacity: 0;
+}
