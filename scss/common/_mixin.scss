@@ -1,17 +1,18 @@
 // ブレイクポイントを指定
-$tb: 768px;
 $sp: 500px;
+$tb: 768px;
 
 
 //全ページ共通
-@mixin tb{
-    @media(max-width:($tb)){
+
+@mixin sp{
+    @media(max-width:($sp)){
         @content;
     }
 }
 
-@mixin sp{
-    @media(max-width:($sp)){
+@mixin tb{
+    @media(max-width:($tb)){
         @content;
     }
 }
